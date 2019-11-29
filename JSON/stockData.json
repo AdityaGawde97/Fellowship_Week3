@@ -1,0 +1,19 @@
+{
+    "stock":[
+        {
+            "stockName" : "Aditya Birla",
+            "stockValue" : 100,
+            "stockPrice" : 12000
+        },
+        {
+            "stockName" : "Reliance",
+            "stockValue" : 150,
+            "stockPrice" : 25000
+        },
+        {
+            "stockName" : "Ford",
+            "stockValue" : 200,
+            "stockPrice" : 30000
+        }
+    ]
+}

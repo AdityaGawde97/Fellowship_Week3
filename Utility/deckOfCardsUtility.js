@@ -8,15 +8,15 @@ class cardsDeck{
         let totalLengthOfDeck = ranks.length * suits.length;
         
         // create new array of deck
-        var cat = new Array(totalLengthOfDeck);
+        var deck = new Array(totalLengthOfDeck);
         for(let i=0; i<ranks.length; i++){
 
             for(let j=0; j<suits.length; j++){
 
-                cat[ suits.length * i + j] = ranks[i] + ' ' + suits[j];
+                deck[ suits.length * i + j] = ranks[i] + ' ' + suits[j];
             }
         }
-        return cat;
+        return deck;
     } 
 
     shuffleDeck(deck){
@@ -29,13 +29,15 @@ class cardsDeck{
        return deck;
     }
 
-    distributeCard(players,noOfCards,shuffleCat){
+    distributeCard(players,noOfCards,shuffleDeck){
         let k = 0;
         let playerDeck = new Array();
         for(let i = 0; i < players; i++){
            playerDeck[i] = new Array();
+        }
+        for(let i = 0; i < players; i++){
            for(let j = 0; j < noOfCards; j++){
-                playerDeck[i][j] = shuffleCat[k++];
+                playerDeck[i][j] = shuffleDeck[k++];
             }
         }
         return playerDeck;

@@ -1,1 +1,88 @@
-{"Rice":[{"name":"Basmati  ","weight":50,"price":110},{"name":"Kolam       ","weight":100,"price":60},{"name":"Jasmin      ","weight":50,"price":70},{"name":"Ambemohar   ","weight":150,"price":50},{"name":"Rosematta   ","weight":100,"price":75},{"name":"Basmati2","weight":80,"price":90}],"Pulses":[{"name":"Lentil      ","weight":80,"price":30},{"name":"Kidney Beans","weight":100,"price":35},{"name":"Green Pea   ","weight":125,"price":50},{"name":"Dew Gram    ","weight":130,"price":25},{"name":"Green Gram  ","weight":100,"price":30}],"Wheat":[{"name":"Lokwan      ","weight":130,"price":40},{"name":"Nchni Wheat ","weight":100,"price":45},{"name":"Puja Tejas  ","weight":140,"price":40},{"name":"Pusa Malawi ","weight":150,"price":50},{"name":"Pusa ujala  ","weight":100,"price":43}]}
+{
+    "Rice": [
+        {
+            "name": "Basmati",
+            "weight": 50,
+            "price": 110
+        },
+        {
+            "name": "Kolam",
+            "weight": 55,
+            "price": 60
+        },
+        {
+            "name": "Jasmin",
+            "weight": 50,
+            "price": 70
+        },
+        {
+            "name": "Ambemohar",
+            "weight": 150,
+            "price": 50
+        },
+        {
+            "name": "Rosematta",
+            "weight": 100,
+            "price": 75
+        },
+        {
+            "name": "Basmati2",
+            "weight": 80,
+            "price": 90
+        }
+    ],
+    "Pulses": [
+        {
+            "name": "Lentil",
+            "weight": 80,
+            "price": 30
+        },
+        {
+            "name": "Kidney Beans",
+            "weight": 100,
+            "price": 35
+        },
+        {
+            "name": "Green Pea",
+            "weight": 125,
+            "price": 50
+        },
+        {
+            "name": "Dew Gram",
+            "weight": 130,
+            "price": 25
+        },
+        {
+            "name": "Green Gram",
+            "weight": 100,
+            "price": 30
+        }
+    ],
+    "Wheat": [
+        {
+            "name": "Lokwan",
+            "weight": 130,
+            "price": 40
+        },
+        {
+            "name": "Nchni Wheat",
+            "weight": 100,
+            "price": 45
+        },
+        {
+            "name": "Puja Tejas",
+            "weight": 140,
+            "price": 40
+        },
+        {
+            "name": "Pusa Malawi",
+            "weight": 150,
+            "price": 50
+        },
+        {
+            "name": "Pusa ujala",
+            "weight": 100,
+            "price": 43
+        }
+    ]
+}

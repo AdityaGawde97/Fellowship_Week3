@@ -2,31 +2,50 @@ const utility = require('../Utility/oopsUtility');
 
 class Inventory{
     constructor(){
+
+        // reading data from json file and parsing it
         let data = utility.readFromFile('../JSON/inventoryData.json')
         this.Inventory = JSON.parse(data);
         //console.log(this.Inventory);
     }
 
+    /**
+     * @description : displaying json data
+     */
+    // displayData(){
+
+    //     console.log('\n*********************** Inventory Data ************************\n');
+    //     console.log('\n\tAvailable\tName\t\t Weight\tPrice');
+    //     console.log('\t---------------------------------------------');
+    //     console.log('\t Rice  ');
+    //     for (let i = 0; i < this.Inventory.Rice.length; i++) {
+    //         console.log(`\t\t\t${this.Inventory.Rice[i].name}\t ${this.Inventory.Rice[i].weight}\t${this.Inventory.Rice[i].price}`);         
+    //     }
+    //     console.log('\t---------------------------------------------');
+    //     console.log('\t Pulses ');
+    //     for (let i = 0; i < this.Inventory.Pulses.length; i++) {
+    //         console.log(`\t\t\t${this.Inventory.Pulses[i].name}\t ${this.Inventory.Pulses[i].weight}\t${this.Inventory.Pulses[i].price}`);         
+    //     }
+    //     console.log('\t---------------------------------------------');
+    //     console.log('\t Wheat ');
+    //     for (let i = 0; i < this.Inventory.Wheat.length; i++) {
+    //         console.log(`\t\t\t${this.Inventory.Wheat[i].name}\t ${this.Inventory.Wheat[i].weight}\t${this.Inventory.Wheat[i].price}`);         
+    //     }
+    //     console.log('\t---------------------------------------------\n');
+    // }
     displayData(){
 
         console.log('\n*********************** Inventory Data ************************\n');
-        console.log('\n\tAvailable\tName\t\t Weight\tPrice');
-        console.log('\t---------------------------------------------');
-        console.log('\t Rice  ');
-        for (let i = 0; i < this.Inventory.Rice.length; i++) {
-            console.log(`\t\t\t${this.Inventory.Rice[i].name}\t ${this.Inventory.Rice[i].weight}\t${this.Inventory.Rice[i].price}`);         
-        }
-        console.log('\t---------------------------------------------');
-        console.log('\t Pulses ');
-        for (let i = 0; i < this.Inventory.Pulses.length; i++) {
-            console.log(`\t\t\t${this.Inventory.Pulses[i].name}\t ${this.Inventory.Pulses[i].weight}\t${this.Inventory.Pulses[i].price}`);         
-        }
-        console.log('\t---------------------------------------------');
-        console.log('\t Wheat ');
-        for (let i = 0; i < this.Inventory.Wheat.length; i++) {
-            console.log(`\t\t\t${this.Inventory.Wheat[i].name}\t ${this.Inventory.Wheat[i].weight}\t${this.Inventory.Wheat[i].price}`);         
-        }
-        console.log('\t---------------------------------------------\n');
+
+        console.log('\nRice : ');
+        console.table(this.Inventory.Rice)         
+
+        console.log('\nPulses : ');
+        console.table(this.Inventory.Pulses) 
+
+        console.log('\nWheat : ');
+        console.table(this.Inventory.Wheat) 
+
     }
 }
     class inventoryUser extends Inventory{

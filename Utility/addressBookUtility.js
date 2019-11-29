@@ -12,9 +12,9 @@ class person extends AddressBook {
 
     displayDeatails(){
         console.log('\n\t*********************************** Address Book ***********************************\n');
-        for (var i = 0; i < this.details.persons.length; i++) {
-            console.table([this.details.persons[i]]);
-        }
+        //for (var i = 0; i < this.details.persons.length; i++) {
+            console.table(this.details.persons);
+        //}
         //console.log(this.details);
        
     }
@@ -149,6 +149,25 @@ class person extends AddressBook {
 
  
                 if (this.details.persons[j].lastName > this.details.persons[j + 1].lastName) {
+                    let temp = this.details.persons[j];
+                    this.details.persons[j] = this.details.persons[j + 1];
+                    this.details.persons[j + 1] = temp;
+                }
+            }
+        }
+        this.displayDeatails();
+        //console.log(this.details);
+        //utility.writeIntoFile('../JSON/addressBookData.json', JSON.stringify(this.details))
+        
+    }
+
+    sortByZipCode() {
+
+        for (let i = 0; i < this.details.persons.length; i++) {
+            for (let j = 0; j < this.details.persons.length - 1; j++) {
+
+ 
+                if (this.details.persons[j].zipCode > this.details.persons[j + 1].zipCode) {
                     let temp = this.details.persons[j];
                     this.details.persons[j] = this.details.persons[j + 1];
                     this.details.persons[j + 1] = temp;

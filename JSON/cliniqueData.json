@@ -1,0 +1,113 @@
+{
+    "doctor": [
+        {
+            "dr_Name": "Aditya Gawde",
+            "dr_Id": "1",
+            "speciality": "Cardiologist",
+            "availability": "AM",
+            "NoOfAppointment": 4 
+        },
+        {
+            "dr_Name": "Priyanka Gandhi",
+            "dr_Id": "2",
+            "speciality": "Surgen",
+            "availability": "PM",
+            "NoOfAppointment": 1
+        },
+        {
+            "dr_Name": "Surbhi Waghmare",
+            "dr_Id": "3",
+            "speciality": "Nuero Surgon",
+            "availability": "PM",
+            "NoOfAppointment": 1
+        }
+    ],
+    "patient": [
+        {
+            "patientName": "Deepak Thakur",
+            "p_Id": 1001,
+            "mobileNumber": "6737435735",
+            "age": 24
+        },
+        {
+            "patientName": "Deepak",
+            "p_Id": 1002,
+            "mobileNumber": "9878987898",
+            "age": 24
+        },
+        {
+            "patientName": "Rakesh Singh",
+            "p_Id": 1004,
+            "mobileNumber": "9876567898",
+            "age": 25
+        },
+        {
+            "patientName": "Vaishnavi Bhosale",
+            "p_Id": 1005,
+            "mobileNumber": "4567898765",
+            "age": 25
+        },
+        {
+            "patientName": "Harshda Virus",
+            "p_Id": 1006,
+            "mobileNumber": "9876567898",
+            "age": 28
+        },
+        {
+            "patientName": "Soru Navade",
+            "p_Id": 1007,
+            "mobileNumber": "9876789876",
+            "age": 25
+        },
+        {
+            "patientName": "Chhotu Padage",
+            "p_Id": 1008,
+            "mobileNumber": "9876789876",
+            "age": 24
+        },
+        {
+            "patientName": "Manoj Mansukh",
+            "p_Id": 1010,
+            "mobileNumber": "9876789876",
+            "age": 24
+        },
+        {
+            "patientName": "Aishwarya",
+            "p_Id": 1009,
+            "mobileNumber": "8789876789",
+            "age": 23
+        }
+    ],
+    "cliniqueAppointment": [
+        {
+            "dr_Name": "Aditya Gawde",
+            "patientName": "Rakesh Singh",
+            "time": "AM"
+        },
+        {
+            "dr_Name": "Aditya Gawde",
+            "patientName": "Vaishnavi Bhosale",
+            "time": "AM"
+        },
+        {
+            "dr_Name": "Aditya Gawde",
+            "patientName": "Harshda Virus",
+            "time": "AM"
+        },
+        {
+            "dr_Name": "Aditya Gawde",
+            "patientName": "Soru Navade",
+            "time": "AM"
+        },
+        {
+            "dr_Name": "Priyanka Gandhi",
+            "patientName": "Manoj Mansukh",
+            "time": "PM"
+        },
+        {
+            "dr_Name": "Surbhi Waghmare",
+            "patientName": "Aishwarya",
+            "time": "PM"
+        }
+    ]
+}
