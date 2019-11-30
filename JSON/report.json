@@ -1,0 +1,21 @@
+{
+    "buyReport": [
+        {
+            "UserName": "Aditya Gawde",
+            "CompanyName": "Moto",
+            "NumberOfSharesBuy": 10,
+            "TotalPrice": 20000,
+            "TransactionDate": "30-11-2019"
+        }
+
+    ],
+    "sellReport": [
+        {
+            "UserName": "Aditya Gawde",
+            "CompanyName": "Moto",
+            "NumberOfSharesBuy": 10,
+            "TotalPrice": 20000,
+            "TransactionDate": "30-11-2019"
+        }
+    ]
+}

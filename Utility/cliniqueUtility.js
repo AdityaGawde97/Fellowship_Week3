@@ -167,7 +167,7 @@ class cliniqueManagement extends Clinique {
                 }
                 break;
             case 2 :
-                var dr_Id = utility.readLine().question("\nEnter id of the doctor : ");
+                var dr_Id = utility.readLine().questionInt("\nEnter id of the doctor : ");
                 for (let i in this.details.doctor) {
                     if (this.details.doctor[i].dr_Id == dr_Id) {
                         //console.log(this.details.doctor[i]);
