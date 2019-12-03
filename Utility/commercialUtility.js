@@ -2,33 +2,55 @@ const utility = require('../Utility/oopsUtility');
 
 class StockAccount{
     constructor(){
+        // reading company json file
         let content1 = utility.readFromFile('../JSON/companyData.json');
+        // reading customer json file
         let content2 = utility.readFromFile('../JSON/customerData.json');
+        // reading report json file
         let content3 = utility.readFromFile('../JSON/report.json')
-        this.companyData = JSON.parse(content1);
+        this.companyData = JSON.parse(content1); 
         this.customerData = JSON.parse(content2);
         this.report = JSON.parse(content3);
     }
-
+    /**
+     * @description : printing company data
+     */
     printCompanyData(){
         console.log('\nCpmpany`s Commercial Data  ');
         console.table(this.companyData.Company);
     }
 
+    /**
+     * @description : printing customer data
+     */
     printCustomerData(){
         console.log('\nCustomer Data ');
         console.table(this.customerData.Customer)
         
     }
 
+    /**
+     * @description : writing or saving company data
+     */
     saveCompanyJson(){
         utility.writeIntoFile('../JSON/companyData.json', JSON.stringify(this.companyData))
     }
 
+    /**
+     * @description : writing or saving customer data
+     */
     saveCustomerJson(){
         utility.writeIntoFile('../JSON/customerData.json', JSON.stringify(this.customerData))
     }
 
+    /**
+     * @description : printing buy stock report
+     * 
+     * @param {*} userName 
+     * @param {*} CompanyName 
+     * @param {*} numberOfShares 
+     * @param {*} totalPrice 
+     */
     buyReport(userName,CompanyName,numberOfShares,totalPrice){
         var today = new Date();
         var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
@@ -42,6 +64,14 @@ class StockAccount{
         utility.writeIntoFile('../JSON/report.json', JSON.stringify(this.report))
     }
 
+    /**
+     * @description : printing sell stock report
+     * 
+     * @param {*} userName 
+     * @param {*} CompanyName 
+     * @param {*} numberOfShares 
+     * @param {*} totalPrice 
+     */
     sellReport(userName,CompanyName,numberOfShares,totalPrice){
         var today = new Date();
         var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
@@ -59,6 +89,9 @@ class StockAccount{
 
 class buyShares extends StockAccount{
 
+    /**
+     * @description : buying shares from company
+     */
     buy(){
 
         console.log('\nBuy Shares : \n');
@@ -90,6 +123,7 @@ class buyShares extends StockAccount{
         }
 
         let choice = utility.readLine().questionInt('\nEnter your Choice : ');
+        if(choice > this.companyData.Company.length) throw '\nInvalid Choice\n';
         answer = utility.readLine().question('\nDo you want to see your details then Press Y : ');
         if(answer == 'Y' || answer == 'y'){
             console.table(this.customerData.Customer[index]);
@@ -131,6 +165,9 @@ class buyShares extends StockAccount{
 
 class sellShares extends StockAccount{
 
+    /**
+     * @description : selling shares to the company
+     */
     sell(){
 
         console.log('\nSell Shares : \n');
@@ -153,6 +190,7 @@ class sellShares extends StockAccount{
         }  
 
         let choice = utility.readLine().questionInt('\nEnter your Choice : ');
+        if(choice > this.companyData.Company.length) throw '\nInvalid Choice\n';
         var answer = utility.readLine().question('\nDo you want to see your details then Press Y : ');
         if(answer == 'Y' || answer == 'y'){
             console.table(this.customerData.Customer[index]);
@@ -186,6 +224,11 @@ class sellShares extends StockAccount{
         this.printCustomerData();
     } 
 
+    /**
+     * @description : calculating shares
+     * @param {choosen company} choice 
+     * @param {number of shares to purchase} numberOfShares 
+     */
     claculateStockPrice(choice,numberOfShares){
         let value = this.companyData.Company[choice].Price * numberOfShares;
         return value;
@@ -196,6 +239,9 @@ class sellShares extends StockAccount{
 
 class userLogin extends StockAccount {
 
+    /**
+     * @description : adding user information to the json
+     */
     registerUser(){
         console.log('\nRegister Customer : ');
         
@@ -215,6 +261,9 @@ class userLogin extends StockAccount {
 
     }
 
+    /**
+     * @description : removing user data from json
+     */
     deleteUser(){
         console.log('\nRemove : ');
         
@@ -308,6 +357,9 @@ class userLogin extends StockAccount {
 
 class companyLogin extends StockAccount{
 
+    /**
+     * @description : adding company data to the json
+     */
     registerCompany(){
         console.log('Register Company : ');
         
@@ -329,6 +381,9 @@ class companyLogin extends StockAccount{
 
     }
 
+    /**
+     * @description : removing company data from the json
+     */
     deleteCompany(){
         let status = true;
         let companyName = utility.readLine().question(`\nEnter the User Name : `);

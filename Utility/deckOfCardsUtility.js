@@ -1,5 +1,8 @@
 class cardsDeck{
 
+    /**
+     * @returns : array of deck of cards
+     */
     deckOfCard(){
 
         let suits = ["♣️", "♦️", "♥️", "♠️"];
@@ -19,6 +22,11 @@ class cardsDeck{
         return deck;
     } 
 
+    /**
+     * @description : shuffling cards deck
+     * @param {cards deck} deck 
+     * @returns : shuffle deck
+     */
     shuffleDeck(deck){
         for(let i = 0; i < deck.length; i++){
             let random = i + parseInt(Math.random() * (deck.length - i));
@@ -29,6 +37,12 @@ class cardsDeck{
        return deck;
     }
 
+    /**
+     * @description : distributing number of cards to the number of player 
+     * @param {nomber of player who are playing} players 
+     * @param {number cards to be distribute} noOfCards 
+     * @param {shuffle cards deck} shuffleDeck 
+     */
     distributeCard(players,noOfCards,shuffleDeck){
         let k = 0;
         let playerDeck = new Array();

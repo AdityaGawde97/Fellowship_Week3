@@ -4,7 +4,7 @@ class Inventory{
     constructor(){
 
         // reading data from json file and parsing it
-        let data = utility.readFromFile('../JSON/inventoryData.json')
+        let data = utility.readFromFile('../JSON/inventoryData.json') 
         this.Inventory = JSON.parse(data);
         //console.log(this.Inventory);
     }
@@ -48,32 +48,33 @@ class Inventory{
 
     }
 }
-    class inventoryUser extends Inventory{
-        userManagement(){
-            let choice;
-            this.displayData();
-            do{
-                console.log('\nAvailable Inventory : \n\n\t1) Rice\n\t2) Pulses\n\t3) Wheat\n');
-                choice = utility.readLine().questionInt('Enter your Choice : ')
-                switch( choice ){
-                    case 1 :
-                        this.stockSwitchCases(this.Inventory.Rice,'Rice');
-                        break;
-                    case 2 : 
-                        this.stockSwitchCases(this.Inventory.Pulses,'Pulse');
-                        break;
-                    case 3 :
-                        this.stockSwitchCases(this.Inventory.Wheat,'Wheat');
-                        break;
-                    default : 
-                        console.log('Invalid Choice');
-                        break;
-                }   
-                var cont = utility.readLine().question('\nDo you want to bye more things ? ( y : yes , n : no): ');
-                // if(cont != 'y' || cont != 'Y' || cont != 'N' || cont != 'n')
-                //     throw 'Invalid input'
-            }while(cont == 'Y' || cont == 'y' )
-        }
+class inventoryUser extends Inventory{
+ 
+    userManagement(){
+        let choice;
+        this.displayData();
+        do{
+            console.log('\nAvailable Inventory : \n\n\t1) Rice\n\t2) Pulses\n\t3) Wheat\n');
+            choice = utility.readLine().questionInt('Enter your Choice : ')
+            switch( choice ){
+                case 1 :
+                    this.stockSwitchCases(this.Inventory.Rice,'Rice');
+                    break;
+                case 2 : 
+                    this.stockSwitchCases(this.Inventory.Pulses,'Pulse');
+                    break;
+                case 3 :
+                    this.stockSwitchCases(this.Inventory.Wheat,'Wheat');
+                    break;
+                default : 
+                    console.log('Invalid Choice');
+                    break;
+            }   
+            var cont = utility.readLine().question('\nDo you want to bye more things ? ( y : yes , n : no): ');
+            // if(cont != 'y' || cont != 'Y' || cont != 'N' || cont != 'n')
+            //     throw 'Invalid input'
+        }while(cont == 'Y' || cont == 'y' )
+    }
 
     stockSwitchCases(stock,string){
         do{
@@ -98,7 +99,6 @@ class Inventory{
             // if(cont != 'y' || cont != 'Y' || cont != 'N' || cont != 'n')
             //     throw 'Invalid input'
         }while(cont == 'Y' || cont == 'y' )
-                
     }
 
     typesSwitchCases(type, stock){
@@ -179,6 +179,10 @@ class inventoryManager extends Inventory {
         
     }
 
+    /**
+     * @description : adding item in the json
+     * @param {*} stock 
+     */
     addItem(stock){
         let _name = utility.readLine().question('\nEnter the name of item : ');
         let _weight = utility.readLine().questionInt('\nEnter the weight of item : ');
@@ -201,6 +205,11 @@ class inventoryManager extends Inventory {
         utility.writeIntoFile('../JSON/inventoryData.json', JSON.stringify(this.Inventory))
     }
 
+    /**
+     * @description  : removing items from json
+     * @param {*} stock 
+     * @param {*} string 
+     */
     removeItem(stock, string){
         let status = true;
         let item=utility.readLine().question(`\nEnter the ${string} Name : `);
